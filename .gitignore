@@ -188,3 +188,6 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 *.lock
+.vs/Vidly/config/applicationhost.config
+Vidly/Web.config
+Vidly/Web.config
