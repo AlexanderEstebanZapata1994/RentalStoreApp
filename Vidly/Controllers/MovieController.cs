@@ -42,6 +42,15 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult SaveOrUpdate(Movie movie)
         {
+            if (!ModelState.IsValid)
+            {
+                MovieFormViewModel viewModel = new MovieFormViewModel
+                {
+                    Movie = movie,
+                    Genre = _context.Genre.ToList()
+                };
+                return View("MovieForm", viewModel);
+            }
             if (movie.Id == 0)
             {
                 movie.DateAdded = System.DateTime.Now;
